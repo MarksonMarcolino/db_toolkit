@@ -4,12 +4,12 @@ A lightweight and modular Python toolkit for secure, reusable access to cloud-ho
 
 ## Features
 
-- ✨ Secure SSH tunneling with `sshtunnel`
-- ⚖️ PostgreSQL-compatible DB connections with `psycopg2`
-- ⏳ Threaded SQL execution using `ThreadPoolExecutor`
-- ✍️ Synchronous query support
-- 📂 Returns results as `pandas.DataFrame`
-- 🔢 Environment variable management with `python-dotenv`
+- Secure SSH tunneling with `sshtunnel`
+- PostgreSQL-compatible DB connections with `psycopg2`
+- Threaded SQL execution using `ThreadPoolExecutor`
+- Synchronous query support
+- Returns results as `pandas.DataFrame`
+- Environment variable management with `python-dotenv`
 
 ## Installation
 
