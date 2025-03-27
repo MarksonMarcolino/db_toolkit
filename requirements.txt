@@ -1,0 +1,8 @@
+pandas
+psycopg2-binary
+sshtunnel
+python-dotenv
+tqdm
+sphinx
+furo
+setuptools

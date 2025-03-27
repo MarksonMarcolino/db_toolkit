@@ -1,0 +1,908 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="./">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" /><link rel="prev" title="db_toolkit" href="modules.html" />
+
+    <!-- Generated with Sphinx 8.2.3 and Furo 2024.08.06 -->
+        <title>db_toolkit package - db_toolkit 0.1.0 documentation</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8f2a1f02" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo.css?v=354aac6f" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/furo-extensions.css?v=302659d7" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation">
+  <div class="visually-hidden">Hide navigation sidebar</div>
+</label>
+<label class="overlay toc-overlay" for="__toc">
+  <div class="visually-hidden">Hide table of contents sidebar</div>
+</label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <div class="visually-hidden">Toggle site navigation sidebar</div>
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="index.html"><div class="brand">db_toolkit 0.1.0 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle">
+          <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <div class="visually-hidden">Toggle table of contents sidebar</div>
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="index.html">
+  
+  
+  <span class="sidebar-brand-text">db_toolkit 0.1.0 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="modules.html">db_toolkit</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><div class="visually-hidden">Toggle navigation of db_toolkit</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">db_toolkit package</a></li>
+</ul>
+</li>
+</ul>
+
+</div>
+</div>
+
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="_sources/db_toolkit.rst.txt" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div>
+<div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle">
+              <div class="visually-hidden">Toggle Light / Dark / Auto color theme</div>
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <div class="visually-hidden">Toggle table of contents sidebar</div>
+            <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="db-toolkit-package">
+<h1>db_toolkit package<a class="headerlink" href="#db-toolkit-package" title="Link to this heading">¶</a></h1>
+<section id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Link to this heading">¶</a></h2>
+</section>
+<section id="module-db_toolkit.db_connection">
+<span id="db-toolkit-db-connection-module"></span><h2>db_toolkit.db_connection module<a class="headerlink" href="#module-db_toolkit.db_connection" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="db_toolkit.db_connection.close_pool">
+<span class="sig-prename descclassname"><span class="pre">db_toolkit.db_connection.</span></span><span class="sig-name descname"><span class="pre">close_pool</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#db_toolkit.db_connection.close_pool" title="Link to this definition">¶</a></dt>
+<dd><p>Close all connections in the global connection pool.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="db_toolkit.db_connection.create_connection_pool">
+<span class="sig-prename descclassname"><span class="pre">db_toolkit.db_connection.</span></span><span class="sig-name descname"><span class="pre">create_connection_pool</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dbname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minconn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxconn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#db_toolkit.db_connection.create_connection_pool" title="Link to this definition">¶</a></dt>
+<dd><p>Initialize a global PostgreSQL connection pool.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>host</strong> (<em>str</em>) – The database host address.</p></li>
+<li><p><strong>port</strong> (<em>int</em>) – The port number to connect to.</p></li>
+<li><p><strong>dbname</strong> (<em>str</em>) – The name of the database.</p></li>
+<li><p><strong>user</strong> (<em>str</em>) – Username used to authenticate.</p></li>
+<li><p><strong>password</strong> (<em>str</em>) – Password used to authenticate.</p></li>
+<li><p><strong>minconn</strong> (<em>int</em><em>, </em><em>default=1</em>) – Minimum number of connections to maintain in the pool.</p></li>
+<li><p><strong>maxconn</strong> (<em>int</em><em>, </em><em>default=10</em>) – Maximum number of connections to maintain in the pool.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Initializes the global connection pool for future use.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="db_toolkit.db_connection.get_connection">
+<span class="sig-prename descclassname"><span class="pre">db_toolkit.db_connection.</span></span><span class="sig-name descname"><span class="pre">get_connection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dbname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#db_toolkit.db_connection.get_connection" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieve a PostgreSQL connection from the pool or create a direct connection.</p>
+<p>If all parameters are provided, creates a direct connection. Otherwise,
+retrieves a connection from the global connection pool.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>host</strong> (<em>str</em><em>, </em><em>optional</em>) – Database host address.</p></li>
+<li><p><strong>port</strong> (<em>int</em><em>, </em><em>optional</em>) – Port number to connect to.</p></li>
+<li><p><strong>dbname</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of the database.</p></li>
+<li><p><strong>user</strong> (<em>str</em><em>, </em><em>optional</em>) – Username used to authenticate.</p></li>
+<li><p><strong>password</strong> (<em>str</em><em>, </em><em>optional</em>) – Password used to authenticate.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A valid PostgreSQL connection object.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>psycopg2.extensions.connection</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>Exception</strong> – If the connection pool is not initialized and parameters are not provided.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="db_toolkit.db_connection.release_connection">
+<span class="sig-prename descclassname"><span class="pre">db_toolkit.db_connection.</span></span><span class="sig-name descname"><span class="pre">release_connection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#db_toolkit.db_connection.release_connection" title="Link to this definition">¶</a></dt>
+<dd><p>Return a connection to the global pool.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>conn</strong> (<em>psycopg2.extensions.connection</em>) – The PostgreSQL connection object to be returned.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-db_toolkit.ssh">
+<span id="db-toolkit-ssh-module"></span><h2>db_toolkit.ssh module<a class="headerlink" href="#module-db_toolkit.ssh" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="db_toolkit.ssh.create_ssh_tunnel">
+<span class="sig-prename descclassname"><span class="pre">db_toolkit.ssh.</span></span><span class="sig-name descname"><span class="pre">create_ssh_tunnel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ssh_host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ssh_port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ssh_username</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ssh_private_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remote_bind_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_bind_address</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">('localhost',</span> <span class="pre">0)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#db_toolkit.ssh.create_ssh_tunnel" title="Link to this definition">¶</a></dt>
+<dd><p>Create and start an SSH tunnel for secure remote database access.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ssh_host</strong> (<em>str</em>) – The hostname or IP address of the SSH server.</p></li>
+<li><p><strong>ssh_port</strong> (<em>int</em>) – The port on which the SSH server is listening.</p></li>
+<li><p><strong>ssh_username</strong> (<em>str</em>) – The username to authenticate with the SSH server.</p></li>
+<li><p><strong>ssh_private_key</strong> (<em>str</em>) – Path to the private key file for SSH authentication.</p></li>
+<li><p><strong>remote_bind_address</strong> (<em>tuple</em><em> of </em><em>(</em><em>str</em><em>, </em><em>int</em><em>)</em>) – The remote host and port to bind (e.g., database host and port).</p></li>
+<li><p><strong>local_bind_address</strong> (<em>tuple</em><em> of </em><em>(</em><em>str</em><em>, </em><em>int</em><em>)</em><em>, </em><em>optional</em>) – The local address and port to bind. Default is (‘localhost’, 0),
+which means a random free port will be used on localhost.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An active SSH tunnel object. Remember to call <cite>tunnel.stop()</cite> when done.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>sshtunnel.SSHTunnelForwarder</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-db_toolkit.sync_queries">
+<span id="db-toolkit-sync-queries-module"></span><h2>db_toolkit.sync_queries module<a class="headerlink" href="#module-db_toolkit.sync_queries" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="db_toolkit.sync_queries.run_query">
+<span class="sig-prename descclassname"><span class="pre">db_toolkit.sync_queries.</span></span><span class="sig-name descname"><span class="pre">run_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dbname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#db_toolkit.sync_queries.run_query" title="Link to this definition">¶</a></dt>
+<dd><p>Execute a single SQL query (synchronously) and return the results as a DataFrame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>host</strong> (<em>str</em>) – Database host.</p></li>
+<li><p><strong>port</strong> (<em>int</em>) – Database port.</p></li>
+<li><p><strong>dbname</strong> (<em>str</em>) – Database name.</p></li>
+<li><p><strong>user</strong> (<em>str</em>) – Username for authentication.</p></li>
+<li><p><strong>password</strong> (<em>str</em>) – Password for authentication.</p></li>
+<li><p><strong>query</strong> (<em>str</em>) – The SQL query string. Can include <cite>%s</cite> placeholders.</p></li>
+<li><p><strong>params</strong> (<em>tuple</em><em>, </em><em>optional</em>) – Parameters to be passed safely to the query using placeholders.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A DataFrame containing the result of the query.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-db_toolkit.threaded_queries">
+<span id="db-toolkit-threaded-queries-module"></span><h2>db_toolkit.threaded_queries module<a class="headerlink" href="#module-db_toolkit.threaded_queries" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="db_toolkit.threaded_queries.run_parallel_queries">
+<span class="sig-prename descclassname"><span class="pre">db_toolkit.threaded_queries.</span></span><span class="sig-name descname"><span class="pre">run_parallel_queries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dbname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_template</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_table</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distinct_sources</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_combinations</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#db_toolkit.threaded_queries.run_parallel_queries" title="Link to this definition">¶</a></dt>
+<dd><p>Run SQL queries in parallel using distinct combinations of values from multiple attributes,
+where each attribute may come from a different table.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>host</strong> (<em>str</em>) – Database host.</p></li>
+<li><p><strong>port</strong> (<em>int</em>) – Database port.</p></li>
+<li><p><strong>dbname</strong> (<em>str</em>) – Database name.</p></li>
+<li><p><strong>user</strong> (<em>str</em>) – Username for authentication.</p></li>
+<li><p><strong>password</strong> (<em>str</em>) – Password for authentication.</p></li>
+<li><p><strong>query_template</strong> (<em>str</em>) – SQL query template with <cite>{table}</cite> and <cite>{attribute_0}</cite>, <cite>{attribute_1}</cite>, … placeholders.
+Must include <cite>%s</cite> for each attribute value in WHERE clause.</p></li>
+<li><p><strong>target_table</strong> (<em>str</em><em> or </em><em>tuple</em>) – Table (or schema, table) used in the query’s FROM clause.</p></li>
+<li><p><strong>distinct_sources</strong> (<em>dict</em>) – Mapping of attribute name to table (or schema, table) to use in the DISTINCT queries.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, prints progress and active worker count. Default is True.</p></li>
+<li><p><strong>debug</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, prints debug information for each query and halts if an error occurs.</p></li>
+<li><p><strong>max_combinations</strong> (<em>int</em><em>, </em><em>optional</em>) – If provided, limits the number of combinations for debugging purposes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A DataFrame containing the concatenated results of all parallel queries.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-db_toolkit.utils">
+<span id="db-toolkit-utils-module"></span><h2>db_toolkit.utils module<a class="headerlink" href="#module-db_toolkit.utils" title="Link to this heading">¶</a></h2>
+<dl class="py function">
+<dt class="sig sig-object py" id="db_toolkit.utils.get_env_variable">
+<span class="sig-prename descclassname"><span class="pre">db_toolkit.utils.</span></span><span class="sig-name descname"><span class="pre">get_env_variable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#db_toolkit.utils.get_env_variable" title="Link to this definition">¶</a></dt>
+<dd><p>Get the value of an environment variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>) – The name of the environment variable to retrieve.</p></li>
+<li><p><strong>default</strong> (<em>str</em><em> or </em><em>None</em><em>, </em><em>optional</em>) – A default value to return if the environment variable is not found.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The value of the environment variable, or the default if not found.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="db_toolkit.utils.load_env">
+<span class="sig-prename descclassname"><span class="pre">db_toolkit.utils.</span></span><span class="sig-name descname"><span class="pre">load_env</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dotenv_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#db_toolkit.utils.load_env" title="Link to this definition">¶</a></dt>
+<dd><p>Load environment variables from a <cite>.env</cite> file.</p>
+<p>If no path is provided, it defaults to loading a <cite>.env</cite> file
+located one level above the current module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dotenv_path</strong> (<em>str</em><em> or </em><em>None</em><em>, </em><em>optional</em>) – Custom path to the <cite>.env</cite> file. If None, a default path is used.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="db_toolkit.utils.log_query_failure">
+<span class="sig-prename descclassname"><span class="pre">db_toolkit.utils.</span></span><span class="sig-name descname"><span class="pre">log_query_failure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'query_failures.log'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#db_toolkit.utils.log_query_failure" title="Link to this definition">¶</a></dt>
+<dd><p>Log the final failure of a query after all retries have been exhausted.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>values</strong> (<em>tuple</em>) – The parameter values used in the failed query.</p></li>
+<li><p><strong>error_msg</strong> (<em>str</em>) – The error message received from the exception.</p></li>
+<li><p><strong>log_file</strong> (<em>str</em><em>, </em><em>optional</em>) – The file path to write the log to. Defaults to ‘query_failures.log’.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="db_toolkit.utils.log_query_retry">
+<span class="sig-prename descclassname"><span class="pre">db_toolkit.utils.</span></span><span class="sig-name descname"><span class="pre">log_query_retry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attempt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'query_retries.log'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#db_toolkit.utils.log_query_retry" title="Link to this definition">¶</a></dt>
+<dd><p>Log an intermediate retry attempt for a query that failed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>values</strong> (<em>tuple</em>) – The parameter values used in the query.</p></li>
+<li><p><strong>attempt</strong> (<em>int</em>) – The current retry attempt number.</p></li>
+<li><p><strong>error_msg</strong> (<em>str</em>) – The error message received from the exception.</p></li>
+<li><p><strong>log_file</strong> (<em>str</em><em>, </em><em>optional</em>) – The file path to write the log to. Defaults to ‘query_retries.log’.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="db_toolkit.utils.require_env">
+<span class="sig-prename descclassname"><span class="pre">db_toolkit.utils.</span></span><span class="sig-name descname"><span class="pre">require_env</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#db_toolkit.utils.require_env" title="Link to this definition">¶</a></dt>
+<dd><p>Ensure that all required environment variables are set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>keys</strong> (<em>list</em><em> of </em><em>str</em>) – A list of environment variable names to validate.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>EnvironmentError</strong> – If one or more environment variables are not set.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="db_toolkit.utils.safe_identifier">
+<span class="sig-prename descclassname"><span class="pre">db_toolkit.utils.</span></span><span class="sig-name descname"><span class="pre">safe_identifier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#db_toolkit.utils.safe_identifier" title="Link to this definition">¶</a></dt>
+<dd><p>Creates a psycopg2.sql.Identifier from a string or tuple (e.g., for schema.table).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em><em> or </em><em>tuple</em><em> of </em><em>str</em>) – A single identifier (e.g., ‘table’) or a qualified identifier (e.g., (‘schema’, ‘table’)).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A safely quoted SQL identifier.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>psycopg2.sql.Identifier</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+<section id="module-db_toolkit">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-db_toolkit" title="Link to this heading">¶</a></h2>
+<section id="db-toolkit">
+<h3>db_toolkit<a class="headerlink" href="#db-toolkit" title="Link to this heading">¶</a></h3>
+<p>A lightweight and modular toolkit for secure and reusable database access
+via SSH tunnels, threaded and synchronous SQL queries, and environment management.</p>
+<section id="modules">
+<h4>Modules<a class="headerlink" href="#modules" title="Link to this heading">¶</a></h4>
+<ul class="simple">
+<li><p>ssh : Create secure SSH tunnels using <cite>sshtunnel</cite>.</p></li>
+<li><p>db_connection : Connect to PostgreSQL-compatible databases.</p></li>
+<li><p>threaded_queries : Execute SQL queries in parallel by attribute.</p></li>
+<li><p>sync_queries : Run single SQL queries synchronously.</p></li>
+<li><p>utils : Load and validate environment variables from <cite>.env</cite> files.</p></li>
+</ul>
+</section>
+</section>
+<dl class="py function">
+<dt class="sig sig-object py" id="db_toolkit.close_pool">
+<span class="sig-prename descclassname"><span class="pre">db_toolkit.</span></span><span class="sig-name descname"><span class="pre">close_pool</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#db_toolkit.close_pool" title="Link to this definition">¶</a></dt>
+<dd><p>Close all connections in the global connection pool.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="db_toolkit.create_connection_pool">
+<span class="sig-prename descclassname"><span class="pre">db_toolkit.</span></span><span class="sig-name descname"><span class="pre">create_connection_pool</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dbname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">minconn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">1</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">maxconn</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">10</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#db_toolkit.create_connection_pool" title="Link to this definition">¶</a></dt>
+<dd><p>Initialize a global PostgreSQL connection pool.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>host</strong> (<em>str</em>) – The database host address.</p></li>
+<li><p><strong>port</strong> (<em>int</em>) – The port number to connect to.</p></li>
+<li><p><strong>dbname</strong> (<em>str</em>) – The name of the database.</p></li>
+<li><p><strong>user</strong> (<em>str</em>) – Username used to authenticate.</p></li>
+<li><p><strong>password</strong> (<em>str</em>) – Password used to authenticate.</p></li>
+<li><p><strong>minconn</strong> (<em>int</em><em>, </em><em>default=1</em>) – Minimum number of connections to maintain in the pool.</p></li>
+<li><p><strong>maxconn</strong> (<em>int</em><em>, </em><em>default=10</em>) – Maximum number of connections to maintain in the pool.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>Initializes the global connection pool for future use.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="db_toolkit.create_ssh_tunnel">
+<span class="sig-prename descclassname"><span class="pre">db_toolkit.</span></span><span class="sig-name descname"><span class="pre">create_ssh_tunnel</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">ssh_host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ssh_port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ssh_username</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">ssh_private_key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">remote_bind_address</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">local_bind_address</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">('localhost',</span> <span class="pre">0)</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#db_toolkit.create_ssh_tunnel" title="Link to this definition">¶</a></dt>
+<dd><p>Create and start an SSH tunnel for secure remote database access.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>ssh_host</strong> (<em>str</em>) – The hostname or IP address of the SSH server.</p></li>
+<li><p><strong>ssh_port</strong> (<em>int</em>) – The port on which the SSH server is listening.</p></li>
+<li><p><strong>ssh_username</strong> (<em>str</em>) – The username to authenticate with the SSH server.</p></li>
+<li><p><strong>ssh_private_key</strong> (<em>str</em>) – Path to the private key file for SSH authentication.</p></li>
+<li><p><strong>remote_bind_address</strong> (<em>tuple</em><em> of </em><em>(</em><em>str</em><em>, </em><em>int</em><em>)</em>) – The remote host and port to bind (e.g., database host and port).</p></li>
+<li><p><strong>local_bind_address</strong> (<em>tuple</em><em> of </em><em>(</em><em>str</em><em>, </em><em>int</em><em>)</em><em>, </em><em>optional</em>) – The local address and port to bind. Default is (‘localhost’, 0),
+which means a random free port will be used on localhost.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>An active SSH tunnel object. Remember to call <cite>tunnel.stop()</cite> when done.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>sshtunnel.SSHTunnelForwarder</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="db_toolkit.get_connection">
+<span class="sig-prename descclassname"><span class="pre">db_toolkit.</span></span><span class="sig-name descname"><span class="pre">get_connection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dbname</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#db_toolkit.get_connection" title="Link to this definition">¶</a></dt>
+<dd><p>Retrieve a PostgreSQL connection from the pool or create a direct connection.</p>
+<p>If all parameters are provided, creates a direct connection. Otherwise,
+retrieves a connection from the global connection pool.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>host</strong> (<em>str</em><em>, </em><em>optional</em>) – Database host address.</p></li>
+<li><p><strong>port</strong> (<em>int</em><em>, </em><em>optional</em>) – Port number to connect to.</p></li>
+<li><p><strong>dbname</strong> (<em>str</em><em>, </em><em>optional</em>) – Name of the database.</p></li>
+<li><p><strong>user</strong> (<em>str</em><em>, </em><em>optional</em>) – Username used to authenticate.</p></li>
+<li><p><strong>password</strong> (<em>str</em><em>, </em><em>optional</em>) – Password used to authenticate.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A valid PostgreSQL connection object.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>psycopg2.extensions.connection</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>Exception</strong> – If the connection pool is not initialized and parameters are not provided.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="db_toolkit.get_env_variable">
+<span class="sig-prename descclassname"><span class="pre">db_toolkit.</span></span><span class="sig-name descname"><span class="pre">get_env_variable</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">key</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">default</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#db_toolkit.get_env_variable" title="Link to this definition">¶</a></dt>
+<dd><p>Get the value of an environment variable.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>key</strong> (<em>str</em>) – The name of the environment variable to retrieve.</p></li>
+<li><p><strong>default</strong> (<em>str</em><em> or </em><em>None</em><em>, </em><em>optional</em>) – A default value to return if the environment variable is not found.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>The value of the environment variable, or the default if not found.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>str or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="db_toolkit.load_env">
+<span class="sig-prename descclassname"><span class="pre">db_toolkit.</span></span><span class="sig-name descname"><span class="pre">load_env</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">dotenv_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#db_toolkit.load_env" title="Link to this definition">¶</a></dt>
+<dd><p>Load environment variables from a <cite>.env</cite> file.</p>
+<p>If no path is provided, it defaults to loading a <cite>.env</cite> file
+located one level above the current module.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>dotenv_path</strong> (<em>str</em><em> or </em><em>None</em><em>, </em><em>optional</em>) – Custom path to the <cite>.env</cite> file. If None, a default path is used.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="db_toolkit.log_query_failure">
+<span class="sig-prename descclassname"><span class="pre">db_toolkit.</span></span><span class="sig-name descname"><span class="pre">log_query_failure</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'query_failures.log'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#db_toolkit.log_query_failure" title="Link to this definition">¶</a></dt>
+<dd><p>Log the final failure of a query after all retries have been exhausted.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>values</strong> (<em>tuple</em>) – The parameter values used in the failed query.</p></li>
+<li><p><strong>error_msg</strong> (<em>str</em>) – The error message received from the exception.</p></li>
+<li><p><strong>log_file</strong> (<em>str</em><em>, </em><em>optional</em>) – The file path to write the log to. Defaults to ‘query_failures.log’.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="db_toolkit.log_query_retry">
+<span class="sig-prename descclassname"><span class="pre">db_toolkit.</span></span><span class="sig-name descname"><span class="pre">log_query_retry</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">values</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">attempt</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">error_msg</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_file</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">'query_retries.log'</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#db_toolkit.log_query_retry" title="Link to this definition">¶</a></dt>
+<dd><p>Log an intermediate retry attempt for a query that failed.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>values</strong> (<em>tuple</em>) – The parameter values used in the query.</p></li>
+<li><p><strong>attempt</strong> (<em>int</em>) – The current retry attempt number.</p></li>
+<li><p><strong>error_msg</strong> (<em>str</em>) – The error message received from the exception.</p></li>
+<li><p><strong>log_file</strong> (<em>str</em><em>, </em><em>optional</em>) – The file path to write the log to. Defaults to ‘query_retries.log’.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="db_toolkit.release_connection">
+<span class="sig-prename descclassname"><span class="pre">db_toolkit.</span></span><span class="sig-name descname"><span class="pre">release_connection</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">conn</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#db_toolkit.release_connection" title="Link to this definition">¶</a></dt>
+<dd><p>Return a connection to the global pool.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>conn</strong> (<em>psycopg2.extensions.connection</em>) – The PostgreSQL connection object to be returned.</p>
+</dd>
+<dt class="field-even">Return type<span class="colon">:</span></dt>
+<dd class="field-even"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="db_toolkit.require_env">
+<span class="sig-prename descclassname"><span class="pre">db_toolkit.</span></span><span class="sig-name descname"><span class="pre">require_env</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">keys</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#db_toolkit.require_env" title="Link to this definition">¶</a></dt>
+<dd><p>Ensure that all required environment variables are set.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>keys</strong> (<em>list</em><em> of </em><em>str</em>) – A list of environment variable names to validate.</p>
+</dd>
+<dt class="field-even">Raises<span class="colon">:</span></dt>
+<dd class="field-even"><p><strong>EnvironmentError</strong> – If one or more environment variables are not set.</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="db_toolkit.run_parallel_queries">
+<span class="sig-prename descclassname"><span class="pre">db_toolkit.</span></span><span class="sig-name descname"><span class="pre">run_parallel_queries</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dbname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query_template</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">target_table</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">distinct_sources</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">dict</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">debug</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">bool</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">max_combinations</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">int</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#db_toolkit.run_parallel_queries" title="Link to this definition">¶</a></dt>
+<dd><p>Run SQL queries in parallel using distinct combinations of values from multiple attributes,
+where each attribute may come from a different table.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>host</strong> (<em>str</em>) – Database host.</p></li>
+<li><p><strong>port</strong> (<em>int</em>) – Database port.</p></li>
+<li><p><strong>dbname</strong> (<em>str</em>) – Database name.</p></li>
+<li><p><strong>user</strong> (<em>str</em>) – Username for authentication.</p></li>
+<li><p><strong>password</strong> (<em>str</em>) – Password for authentication.</p></li>
+<li><p><strong>query_template</strong> (<em>str</em>) – SQL query template with <cite>{table}</cite> and <cite>{attribute_0}</cite>, <cite>{attribute_1}</cite>, … placeholders.
+Must include <cite>%s</cite> for each attribute value in WHERE clause.</p></li>
+<li><p><strong>target_table</strong> (<em>str</em><em> or </em><em>tuple</em>) – Table (or schema, table) used in the query’s FROM clause.</p></li>
+<li><p><strong>distinct_sources</strong> (<em>dict</em>) – Mapping of attribute name to table (or schema, table) to use in the DISTINCT queries.</p></li>
+<li><p><strong>verbose</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, prints progress and active worker count. Default is True.</p></li>
+<li><p><strong>debug</strong> (<em>bool</em><em>, </em><em>optional</em>) – If True, prints debug information for each query and halts if an error occurs.</p></li>
+<li><p><strong>max_combinations</strong> (<em>int</em><em>, </em><em>optional</em>) – If provided, limits the number of combinations for debugging purposes.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A DataFrame containing the concatenated results of all parallel queries.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="db_toolkit.run_query">
+<span class="sig-prename descclassname"><span class="pre">db_toolkit.</span></span><span class="sig-name descname"><span class="pre">run_query</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">host</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">port</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">dbname</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">user</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">password</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">query</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">params</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">tuple</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#db_toolkit.run_query" title="Link to this definition">¶</a></dt>
+<dd><p>Execute a single SQL query (synchronously) and return the results as a DataFrame.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>host</strong> (<em>str</em>) – Database host.</p></li>
+<li><p><strong>port</strong> (<em>int</em>) – Database port.</p></li>
+<li><p><strong>dbname</strong> (<em>str</em>) – Database name.</p></li>
+<li><p><strong>user</strong> (<em>str</em>) – Username for authentication.</p></li>
+<li><p><strong>password</strong> (<em>str</em>) – Password for authentication.</p></li>
+<li><p><strong>query</strong> (<em>str</em>) – The SQL query string. Can include <cite>%s</cite> placeholders.</p></li>
+<li><p><strong>params</strong> (<em>tuple</em><em>, </em><em>optional</em>) – Parameters to be passed safely to the query using placeholders.</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A DataFrame containing the result of the query.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>pandas.DataFrame</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="db_toolkit.safe_identifier">
+<span class="sig-prename descclassname"><span class="pre">db_toolkit.</span></span><span class="sig-name descname"><span class="pre">safe_identifier</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#db_toolkit.safe_identifier" title="Link to this definition">¶</a></dt>
+<dd><p>Creates a psycopg2.sql.Identifier from a string or tuple (e.g., for schema.table).</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><p><strong>name</strong> (<em>str</em><em> or </em><em>tuple</em><em> of </em><em>str</em>) – A single identifier (e.g., ‘table’) or a qualified identifier (e.g., (‘schema’, ‘table’)).</p>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>A safely quoted SQL identifier.</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>psycopg2.sql.Identifier</p>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          
+          <a class="prev-page" href="modules.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">db_toolkit</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2025, Markson Rebelo Marcolino
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">db_toolkit package</a><ul>
+<li><a class="reference internal" href="#submodules">Submodules</a></li>
+<li><a class="reference internal" href="#module-db_toolkit.db_connection">db_toolkit.db_connection module</a><ul>
+<li><a class="reference internal" href="#db_toolkit.db_connection.close_pool"><code class="docutils literal notranslate"><span class="pre">close_pool()</span></code></a></li>
+<li><a class="reference internal" href="#db_toolkit.db_connection.create_connection_pool"><code class="docutils literal notranslate"><span class="pre">create_connection_pool()</span></code></a></li>
+<li><a class="reference internal" href="#db_toolkit.db_connection.get_connection"><code class="docutils literal notranslate"><span class="pre">get_connection()</span></code></a></li>
+<li><a class="reference internal" href="#db_toolkit.db_connection.release_connection"><code class="docutils literal notranslate"><span class="pre">release_connection()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-db_toolkit.ssh">db_toolkit.ssh module</a><ul>
+<li><a class="reference internal" href="#db_toolkit.ssh.create_ssh_tunnel"><code class="docutils literal notranslate"><span class="pre">create_ssh_tunnel()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-db_toolkit.sync_queries">db_toolkit.sync_queries module</a><ul>
+<li><a class="reference internal" href="#db_toolkit.sync_queries.run_query"><code class="docutils literal notranslate"><span class="pre">run_query()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-db_toolkit.threaded_queries">db_toolkit.threaded_queries module</a><ul>
+<li><a class="reference internal" href="#db_toolkit.threaded_queries.run_parallel_queries"><code class="docutils literal notranslate"><span class="pre">run_parallel_queries()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-db_toolkit.utils">db_toolkit.utils module</a><ul>
+<li><a class="reference internal" href="#db_toolkit.utils.get_env_variable"><code class="docutils literal notranslate"><span class="pre">get_env_variable()</span></code></a></li>
+<li><a class="reference internal" href="#db_toolkit.utils.load_env"><code class="docutils literal notranslate"><span class="pre">load_env()</span></code></a></li>
+<li><a class="reference internal" href="#db_toolkit.utils.log_query_failure"><code class="docutils literal notranslate"><span class="pre">log_query_failure()</span></code></a></li>
+<li><a class="reference internal" href="#db_toolkit.utils.log_query_retry"><code class="docutils literal notranslate"><span class="pre">log_query_retry()</span></code></a></li>
+<li><a class="reference internal" href="#db_toolkit.utils.require_env"><code class="docutils literal notranslate"><span class="pre">require_env()</span></code></a></li>
+<li><a class="reference internal" href="#db_toolkit.utils.safe_identifier"><code class="docutils literal notranslate"><span class="pre">safe_identifier()</span></code></a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#module-db_toolkit">Module contents</a><ul>
+<li><a class="reference internal" href="#db-toolkit">db_toolkit</a><ul>
+<li><a class="reference internal" href="#modules">Modules</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#db_toolkit.close_pool"><code class="docutils literal notranslate"><span class="pre">close_pool()</span></code></a></li>
+<li><a class="reference internal" href="#db_toolkit.create_connection_pool"><code class="docutils literal notranslate"><span class="pre">create_connection_pool()</span></code></a></li>
+<li><a class="reference internal" href="#db_toolkit.create_ssh_tunnel"><code class="docutils literal notranslate"><span class="pre">create_ssh_tunnel()</span></code></a></li>
+<li><a class="reference internal" href="#db_toolkit.get_connection"><code class="docutils literal notranslate"><span class="pre">get_connection()</span></code></a></li>
+<li><a class="reference internal" href="#db_toolkit.get_env_variable"><code class="docutils literal notranslate"><span class="pre">get_env_variable()</span></code></a></li>
+<li><a class="reference internal" href="#db_toolkit.load_env"><code class="docutils literal notranslate"><span class="pre">load_env()</span></code></a></li>
+<li><a class="reference internal" href="#db_toolkit.log_query_failure"><code class="docutils literal notranslate"><span class="pre">log_query_failure()</span></code></a></li>
+<li><a class="reference internal" href="#db_toolkit.log_query_retry"><code class="docutils literal notranslate"><span class="pre">log_query_retry()</span></code></a></li>
+<li><a class="reference internal" href="#db_toolkit.release_connection"><code class="docutils literal notranslate"><span class="pre">release_connection()</span></code></a></li>
+<li><a class="reference internal" href="#db_toolkit.require_env"><code class="docutils literal notranslate"><span class="pre">require_env()</span></code></a></li>
+<li><a class="reference internal" href="#db_toolkit.run_parallel_queries"><code class="docutils literal notranslate"><span class="pre">run_parallel_queries()</span></code></a></li>
+<li><a class="reference internal" href="#db_toolkit.run_query"><code class="docutils literal notranslate"><span class="pre">run_query()</span></code></a></li>
+<li><a class="reference internal" href="#db_toolkit.safe_identifier"><code class="docutils literal notranslate"><span class="pre">safe_identifier()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="_static/documentation_options.js?v=01f34227"></script>
+    <script src="_static/doctools.js?v=9bcbadda"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/scripts/furo.js?v=5fa4622c"></script>
+    </body>
+</html>
